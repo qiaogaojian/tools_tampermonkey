@@ -18,7 +18,7 @@
     document.getElementById("form").style.width = "1000px";
     document.getElementsByClassName("s_btn_wr")[0].style.width = "80px";
     var baiduBtn = document.getElementById("su"); // 百度搜索按钮
-    baiduBtn.style = "width:80px";
+    baiduBtn.style = "width:80px; border-radius:0,10px,10px,0;";
     var googleBtn = document.createElement('span'); // Google 搜索按钮
     googleBtn.className = baiduBtn.parentNode.className; // 将 Google 搜索按钮和百度搜索按钮的 class 名称设置为相同
     googleBtn.style = "width:80px;margin:0px 0px 0px 2px;";
@@ -29,7 +29,7 @@
         googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:34px; color:#fff; background:#38f;border:0;'>";
         // window.alert("finish");
     }else{
-        googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px;'>";
+        googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:44px; color:#fff; background:#38f; border-radius:10px;'>";
         // window.alert("start");
     }
 
