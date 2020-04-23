@@ -18,19 +18,23 @@
     document.getElementById("form").style.width = "1000px";
     document.getElementsByClassName("s_btn_wr")[0].style.width = "80px";
     var baiduBtn = document.getElementById("su"); // 百度搜索按钮
-    baiduBtn.style = "width:80px; border-radius:0,10px,10px,0;";
+    baiduBtn.style = "width:80px; border-radius:0;";
     var googleBtn = document.createElement('span'); // Google 搜索按钮
     googleBtn.className = baiduBtn.parentNode.className; // 将 Google 搜索按钮和百度搜索按钮的 class 名称设置为相同
     googleBtn.style = "width:80px;margin:0px 0px 0px 2px;";
+    var h = baiduBtn.offsetHeight;
 
+    var getStyle = function(element, property) {
+    return window.getComputedStyle ? window.getComputedStyle(element, null).getPropertyValue(property) : element.style[property.replace(/-([a-z])/g, function (g) { return g[1].toUpperCase(); })];
+    };
+    var color = getStyle(baiduBtn, "background-color");
     var baiduUrl = window.location.href;
     // window.alert(baiduUrl);
     if (baiduUrl.indexOf("/s?")!= -1){
-        googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:34px; color:#fff; background:#38f;border:0;'>";
+        googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:"+h+"px; color:#fff; background:"+ color +";border:0;border-radius:0 10px 10px 0;'>";
         // window.alert("finish");
     }else{
-        googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:44px; color:#fff; background:#38f; border-radius:10px;'>";
-        // window.alert("start");
+        googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:"+h+"px;color:#fff; background:"+ color +";border-radius:0 10px 10px 0;'>";
     }
 
     googleBtn.addEventListener('click', function () {
@@ -48,6 +52,10 @@
         // window.location.href = link; //当前窗口打开链接
         window.open(link); //新窗口打开链接
     }
+    document.getElementById('qrcode').style.visibility='hidden'
+    document.getElementById('bottom_layer').style.visibility='hidden'
+    document.getElementById('u1').style.visibility='hidden'
+
     //baiduBtn.addEventListener('click',onClickBaidu);
     //function onClickBaidu()
     //{
