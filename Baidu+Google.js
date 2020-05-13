@@ -63,7 +63,7 @@
     if (baiduUrl.indexOf("/s?")!= -1){
         googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:"+h+"px; color:#fff; background:"+ color +";border:0;border-radius:0 10px 10px 0;'>";
     }else{
-        googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:"+h+"px;color:#fff; background:"+ color +";border-radius:0 10px 10px 0;'>";
+        googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:"+h+"px;color:#fff; background:"+ color +";border:0;border-radius:0 10px 10px 0;'>";
     }
 
     googleBtn.addEventListener('click', function () {
