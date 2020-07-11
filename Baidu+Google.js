@@ -16,33 +16,23 @@
 (function() {
     'use strict';
 
-
     // 隐藏百度热搜和上下栏
-    if(document.getElementById('qrcode')!=null)
-    {
-        document.getElementById('qrcode').style.visibility='hidden'
-    }
-    if(document.getElementById('bottom_layer')!=null)
-    {
-        document.getElementById('bottom_layer').style.visibility='hidden'
-    }
-    if(document.getElementById('u1')!=null)
-    {
-        document.getElementById('u1').style.visibility='hidden'
-    }
-    if(document.getElementById('s-hotsearch-wrapper')!=null)
-    {
-        document.getElementById('s-hotsearch-wrapper').style.visibility='hidden'
-    }
-    if(document.getElementById('hotsearch-content-wrapper')!=null)
-    {
-        document.getElementById('hotsearch-content-wrapper').style.visibility='hidden'
-    }
-    if(document.getElementById('s-top-left')!=null)
-    {
-        document.getElementById('s-top-left').style.visibility='hidden'
+    hideById("qrcode")
+    hideById("bottom_layer")
+    hideById("u1")
+    hideById("s-hotsearch-wrapper")
+    hideById("hotsearch-content-wrapper")
+    hideById("s-top-left")
+
+    if(document.getElementById("s_main")!=null){
+           document.getElementById("s_main").innerHTML=''
     }
 
+    function hideById(elementId){
+       if(document.getElementById(elementId)!=null){
+           document.getElementById(elementId).style.visibility='hidden'
+       }
+    }
 
     // 添加Google搜索
     document.getElementById("form").style.width = "1000px";
