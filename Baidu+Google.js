@@ -25,6 +25,7 @@
     hideById("hotsearch-content-wrapper")
     hideById("s-top-left")
     hideById("hotword")
+    hideById("content_right")
 
     if(document.getElementById("s_main")!=null){
            document.getElementById("s_main").innerHTML=''
