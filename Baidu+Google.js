@@ -11,6 +11,9 @@
 // @match             http*://www.baidu.com/
 // @match             http*://www.baidu.com/s?*
 // @match             *://*.sogou.com/*
+// @include           *://www.zhihu.com/*
+// @include           *://www.zhihu.com/*
+// @include           https://video.zhihu.com/video/*
 // @grant             none
 // ==/UserScript==
 
@@ -26,6 +29,7 @@
     hideById("s-top-left");
     hideById("hotword");
     hideById("content_right");
+    hideByClass("QuestionHeader-title");
 
     if (document.getElementById("s_main") != null) {
         document.getElementById("s_main").innerHTML = ''
@@ -33,7 +37,15 @@
 
     function hideById(elementId) {
         if (document.getElementById(elementId) != null) {
-            document.getElementById(elementId).style.visibility = 'hidden'
+            document.getElementById(elementId).style.visibility = 'hidden';
+        }
+    }
+
+    function hideByClass(className){
+        try{
+            document.getElementsByClassName(className)[0].style.visibility = 'hidden';
+        }catch(err){
+            console.log(err)
         }
     }
 
@@ -61,20 +73,14 @@
     var color = getStyle(baiduBtn, "background-color");
     var baiduUrl = window.location.href;
     if (baiduUrl.indexOf("/s?") !== -1) {
+        console.log("add button 1")
         googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0;'>";
         weixinBtn.innerHTML = "<input type='button' id='weixin' value='微信' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0 10px 10px 0;'>";
     } else {
+        console.log("add button 1")
         googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:" + h + "px;color:#fff; background:" + color + ";border:0;border-radius:0;'>";
         weixinBtn.innerHTML = "<input type='button' id='weixin' value='微信' class='btn' style='width:80px; height:" + h + "px;color:#fff; background:" + color + ";border:0;border-radius:0 10px 10px 0;'>";
     }
-    
-    baiduBtn.addEventListener('click', function () {
-        var input = document.getElementById("kw"); // 百度输入框
-        var keyword = input.value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
-        if (keyword !== "") {
-            return baiduSearch(keyword);
-        }
-    });
 
     googleBtn.addEventListener('click', function () {
         var input = document.getElementById("kw"); // 百度输入框
@@ -82,7 +88,7 @@
         if (keyword !== "") {
             return googleSearch(keyword);
         }
-    });
+    })
 
     weixinBtn.addEventListener('click', function () {
         var input = document.getElementById("kw"); // 百度输入框
@@ -90,14 +96,14 @@
         if (keyword !== "") {
             return weixinSearch(keyword);
         }
-    });
+    })
 
     var form = document.getElementsByClassName("fm")[0];
     form.appendChild(googleBtn);
     form.appendChild(weixinBtn);
 
     function googleSearch(keyword) { // Google 搜索
-        var link = "https://www.google.com/search?q=" + encodeURIComponent(keyword);
+        var link = "https://www.google.com.hk/search?q=" + encodeURIComponent(keyword);
         // window.location.href = link; //当前窗口打开链接
         window.open(link); //新窗口打开链接
     }
@@ -106,6 +112,14 @@
         var link = "https://weixin.sogou.com/weixin?type=2&query=" + encodeURIComponent(keyword);
         window.open(link)
     }
+
+    baiduBtn.addEventListener('click', function () {
+        var input = document.getElementById("kw"); // 百度输入框
+        var keyword = input.value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+        if (keyword !== "") {
+            return baiduSearch(keyword);
+        }
+    });
 
     function baiduSearch(keyword) { // Google 搜索
         var link = "https://www.baidu.com/s?wd=" + encodeURIComponent(keyword);
