@@ -77,7 +77,7 @@
 		var btn1 = document.getElementById("google");
 		var btn2 = document.getElementById("weixin");
         var btn3 = document.getElementById("bilibili");
-        var btn4 = document.getElementById("bilibili");
+        var btn4 = document.getElementById("zhihu");
 
         setTimeout(function(){
             var h = baiduBtn.offsetHeight;
