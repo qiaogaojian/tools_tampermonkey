@@ -10,7 +10,7 @@
 // @match             *://*.sogou.com/*
 // @match             *://*.zhihu.com/*
 // @grant             none
-// @require           https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js
+// @require           https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js
 // ==/UserScript==
 
 (function ()
