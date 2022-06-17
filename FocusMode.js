@@ -1,11 +1,10 @@
 // ==UserScript==
 // @name              专注模式
 // @name:en           Focus Mode
-// @namespace         http://mofiter.com/
 // @version           1.0
 // @description       去除网页上影响注意力的元素,保持专注
 // @description:en    Remove distracting elements from your web pages and stay focused
-// @author            mofiter
+// @author            michael
 // @match             *://*.baidu.com/*
 // @match             *://*.sogou.com/*
 // @match             *://*.zhihu.com/*
