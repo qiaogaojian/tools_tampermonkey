@@ -24,35 +24,27 @@
     if (curUrl.includes("baidu.com"))
     {
         // ****************************************************************** 添加 ******************************************************************
-
+   
         // 百度搜索按钮
         var baiduBtn = $("#su")[0]
         baiduBtn.style = "width:80px; border-radius:0;";
         baiduBtn.addEventListener('click', function ()
-        {
-            var input = document.getElementById("kw"); // 百度输入框
-            var keyword = input.value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
-            if (keyword != "")
-            {
-                var link = "https://www.baidu.com/s?wd=" + encodeURIComponent(keyword);
-                // window.location.href = link; //当前窗口打开链接
-                window.open(link, '_self'); //新窗口打开链接
-            }
+        {        
+            keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var link = "https://www.baidu.com/s?wd=" + encodeURIComponent(keyword);
+            // window.location.href = link; //当前窗口打开链接
+            window.open(link, '_self'); //新窗口打开链接
         })
-
+        
         // Google 搜索按钮
         var googleBtn = document.createElement('span')
         googleBtn.className = baiduBtn.parentNode.className; // 将 Google 搜索按钮和百度搜索按钮的 class 名称设置为相同
         googleBtn.style = "width:80px;margin:0px 0px 0px 2px;";
         googleBtn.addEventListener('click', function ()
         {
-            var input = document.getElementById("kw"); // 百度输入框
-            var keyword = input.value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
-            if (keyword != "")
-            {
-                var link = "https://www.google.com/search?q=" + encodeURIComponent(keyword);
-                window.open(link);
-            }
+            keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var link = "https://www.google.com/search?q=" + encodeURIComponent(keyword);
+            window.open(link);
         })
 
         // 微信搜索按钮
@@ -61,43 +53,31 @@
         weixinBtn.style = "width:80px;margin:0px 0px 0px 2px;";
         weixinBtn.addEventListener('click', function ()
         {
-            var input = document.getElementById("kw"); // 百度输入框
-            var keyword = input.value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
-            if (keyword != "")
-            {
-                var link = "https://weixin.sogou.com/weixin?type=2&query=" + encodeURIComponent(keyword);
-                window.open(link);
-            }
+            keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var link = "https://weixin.sogou.com/weixin?type=2&query=" + encodeURIComponent(keyword);
+            window.open(link);
         })
-
+        
         // B站搜索按钮
         var bilibiliBtn = document.createElement('span')
         bilibiliBtn.className = baiduBtn.parentNode.className; // 将B站搜索按钮和百度搜索按钮的 class 名称设置为相同
         bilibiliBtn.style = "width:80px;margin:0px 0px 0px 2px;";
         bilibiliBtn.addEventListener('click', function ()
         {
-            var input = document.getElementById("kw"); // 百度输入框
-            var keyword = input.value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
-            if (keyword != "")
-            {
-                var link = "https://search.bilibili.com/all?keyword=" + encodeURIComponent(keyword);
-                window.open(link);
-            }
+            keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var link = "https://search.bilibili.com/all?keyword=" + encodeURIComponent(keyword);
+            window.open(link);
         })
-
+        
         // 知乎搜索按钮
         var zhihuBtn = document.createElement('span')
         zhihuBtn.className = baiduBtn.parentNode.className; // 将知乎搜索按钮和百度搜索按钮的 class 名称设置为相同
         zhihuBtn.style = "width:80px;margin:0px 0px 0px 2px;";
         zhihuBtn.addEventListener('click', function ()
         {
-            var input = document.getElementById("kw"); // 百度输入框
-            var keyword = input.value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
-            if (keyword != "")
-            {
-                var link = "https://www.zhihu.com/search?type=content&q=" + encodeURIComponent(keyword);
-                window.open(link);
-            }
+            keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var link = "https://www.zhihu.com/search?type=content&q=" + encodeURIComponent(keyword);
+            window.open(link);
         })
 
         // 添加元素
@@ -106,10 +86,11 @@
         form.appendChild(weixinBtn);
         form.appendChild(bilibiliBtn);
         form.appendChild(zhihuBtn);
-
-
+        
+        
         // ****************************************************************** 隐藏 ******************************************************************
 
+        hideUnUsed();
         setTimeout(function ()
         {
             hideUnUsed();
@@ -125,14 +106,6 @@
             $("#hotsearch-content-wrapper").css("visibility", "hidden");
             $("#s-top-left").css("visibility", "hidden");
             $("#content_right").css("visibility", "hidden");
-        }
-
-        function hideById (elementId)
-        {
-            if (document.getElementById(elementId) != null)
-            {
-                document.getElementById(elementId).style.visibility = 'hidden'
-            }
         }
 
 
