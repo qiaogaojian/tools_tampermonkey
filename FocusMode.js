@@ -4,7 +4,7 @@
 // @namespace         http://mofiter.com/
 // @version           1.0
 // @description       去除网页上影响注意力的元素,保持专注
-// @description:en    add a google search button behind the baidu search button on the baidu's homepage and search result page,making it convenient to search in google
+// @description:en    Remove distracting elements from your web pages and stay focused
 // @author            mofiter
 // @match             *://*.baidu.com/*
 // @match             *://*.sogou.com/*
