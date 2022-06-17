@@ -30,7 +30,7 @@
         baiduBtn.style = "width:80px; border-radius:0;";
         baiduBtn.addEventListener('click', function ()
         {        
-            keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
             var link = "https://www.baidu.com/s?wd=" + encodeURIComponent(keyword);
             // window.location.href = link; //当前窗口打开链接
             window.open(link, '_self'); //新窗口打开链接
@@ -42,7 +42,7 @@
         googleBtn.style = "width:80px;margin:0px 0px 0px 2px;";
         googleBtn.addEventListener('click', function ()
         {
-            keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
             var link = "https://www.google.com/search?q=" + encodeURIComponent(keyword);
             window.open(link);
         })
@@ -53,7 +53,7 @@
         weixinBtn.style = "width:80px;margin:0px 0px 0px 2px;";
         weixinBtn.addEventListener('click', function ()
         {
-            keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
             var link = "https://weixin.sogou.com/weixin?type=2&query=" + encodeURIComponent(keyword);
             window.open(link);
         })
@@ -64,7 +64,7 @@
         bilibiliBtn.style = "width:80px;margin:0px 0px 0px 2px;";
         bilibiliBtn.addEventListener('click', function ()
         {
-            keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
             var link = "https://search.bilibili.com/all?keyword=" + encodeURIComponent(keyword);
             window.open(link);
         })
@@ -75,7 +75,7 @@
         zhihuBtn.style = "width:80px;margin:0px 0px 0px 2px;";
         zhihuBtn.addEventListener('click', function ()
         {
-            keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
             var link = "https://www.zhihu.com/search?type=content&q=" + encodeURIComponent(keyword);
             window.open(link);
         })
