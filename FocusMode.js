@@ -1,10 +1,11 @@
 // ==UserScript==
 // @name              专注模式
 // @name:en           Focus Mode
+// @namespace         http://mofiter.com/
 // @version           1.0
 // @description       去除网页上影响注意力的元素,保持专注
-// @description:en    Remove distracting elements from your web pages and stay focused
-// @author            michael
+// @description:en    add a google search button behind the baidu search button on the baidu's homepage and search result page,making it convenient to search in google
+// @author            mofiter
 // @match             *://*.baidu.com/*
 // @match             *://*.sogou.com/*
 // @match             *://*.zhihu.com/*
@@ -23,18 +24,18 @@
     if (curUrl.includes("baidu.com"))
     {
         // ****************************************************************** 添加 ******************************************************************
-   
+
         // 百度搜索按钮
         var baiduBtn = $("#su")[0]
         baiduBtn.style = "width:80px; border-radius:0;";
         baiduBtn.addEventListener('click', function ()
-        {        
+        {
             var keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
             var link = "https://www.baidu.com/s?wd=" + encodeURIComponent(keyword);
             // window.location.href = link; //当前窗口打开链接
             window.open(link, '_self'); //新窗口打开链接
         })
-        
+
         // Google 搜索按钮
         var googleBtn = document.createElement('span')
         googleBtn.className = baiduBtn.parentNode.className; // 将 Google 搜索按钮和百度搜索按钮的 class 名称设置为相同
@@ -56,7 +57,7 @@
             var link = "https://weixin.sogou.com/weixin?type=2&query=" + encodeURIComponent(keyword);
             window.open(link);
         })
-        
+
         // B站搜索按钮
         var bilibiliBtn = document.createElement('span')
         bilibiliBtn.className = baiduBtn.parentNode.className; // 将B站搜索按钮和百度搜索按钮的 class 名称设置为相同
@@ -67,7 +68,7 @@
             var link = "https://search.bilibili.com/all?keyword=" + encodeURIComponent(keyword);
             window.open(link);
         })
-        
+
         // 知乎搜索按钮
         var zhihuBtn = document.createElement('span')
         zhihuBtn.className = baiduBtn.parentNode.className; // 将知乎搜索按钮和百度搜索按钮的 class 名称设置为相同
@@ -85,7 +86,8 @@
         form.appendChild(weixinBtn);
         form.appendChild(bilibiliBtn);
         form.appendChild(zhihuBtn);
-                
+
+
         // ****************************************************************** 隐藏 ******************************************************************
 
         hideUnUsed();
@@ -104,7 +106,9 @@
             $("#hotsearch-content-wrapper").css("visibility", "hidden");
             $("#s-top-left").css("visibility", "hidden");
             $("#content_right").css("visibility", "hidden");
+            $("#s_lm_wrap").css("visibility", "hidden");
         }
+
 
         // ****************************************************************** 调整 ******************************************************************
 
