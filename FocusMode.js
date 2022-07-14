@@ -79,13 +79,24 @@
             window.open(link);
         })
 
+        // 豆瓣书籍搜索按钮
+        var doubanBtn = document.createElement('span')
+        doubanBtn.className = baiduBtn.parentNode.className; // 将知乎搜索按钮和百度搜索按钮的 class 名称设置为相同
+        doubanBtn.style = "width:80px;margin:0px 0px 0px 2px;";
+        doubanBtn.addEventListener('click', function ()
+        {
+            var keyword = $("#kw")[0].value.replace(/(^\s*)|(\s*$)/g, ""); // 搜索关键字（去空格）
+            var link = "https://search.douban.com/book/subject_search?search_text=" + encodeURIComponent(keyword);
+            window.open(link);
+        })
+
         // 添加元素
         var form = $(".fm")[0];
         form.appendChild(googleBtn);
         form.appendChild(weixinBtn);
         form.appendChild(bilibiliBtn);
         form.appendChild(zhihuBtn);
-
+        form.appendChild(doubanBtn);
 
         // ****************************************************************** 隐藏 ******************************************************************
 
@@ -141,7 +152,8 @@
         googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0; font-size:17px;'>";
         weixinBtn.innerHTML = "<input type='button' id='weixin' value='微信' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0; font-size:17px;'>";
         bilibiliBtn.innerHTML = "<input type='button' id='bilibili' value='B站' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0; font-size:17px;'>";
-        zhihuBtn.innerHTML = "<input type='button' id='zhihu' value='知乎' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0 10px 10px 0; font-size:17px;'>";
+        zhihuBtn.innerHTML = "<input type='button' id='zhihu' value='知乎' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0; font-size:17px;'>";
+        doubanBtn.innerHTML = "<input type='button' id='zhihu' value='豆瓣' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0 10px 10px 0; font-size:17px;'>";
 
         function getStyle (element, property)
         {
