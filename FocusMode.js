@@ -135,7 +135,7 @@
             var btn2 = document.getElementById("weixin");
             var btn3 = document.getElementById("bilibili");
             var btn4 = document.getElementById("zhihu");
-
+            var btn5 = document.getElementById("zhihu");
             setTimeout(function ()
             {
                 var h = baiduBtn.offsetHeight;
@@ -144,6 +144,7 @@
                 btn2.style.height = h + "px";
                 btn3.style.height = h + "px";
                 btn4.style.height = h + "px";
+                btn5.style.height = h + "px";
             }, 10);
         }
 
