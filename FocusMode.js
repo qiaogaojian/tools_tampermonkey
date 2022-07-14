@@ -81,7 +81,7 @@
 
         // 豆瓣书籍搜索按钮
         var doubanBtn = document.createElement('span')
-        doubanBtn.className = baiduBtn.parentNode.className; // 将知乎搜索按钮和百度搜索按钮的 class 名称设置为相同
+        doubanBtn.className = baiduBtn.parentNode.className; // 将豆瓣书籍搜索按钮和百度搜索按钮的 class 名称设置为相同
         doubanBtn.style = "width:80px;margin:0px 0px 0px 2px;";
         doubanBtn.addEventListener('click', function ()
         {
