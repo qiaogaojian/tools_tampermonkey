@@ -4,7 +4,7 @@
 // @version           1.0
 // @description       去除网页上影响注意力的元素,保持专注
 // @description:en    Remove distracting elements from your web pages and stay focused
-// @author            michael
+// @author            Michael
 // @match             *://*.baidu.com/*
 // @match             *://*.sogou.com/*
 // @match             *://*.zhihu.com/*
@@ -135,7 +135,7 @@
             var btn2 = document.getElementById("weixin");
             var btn3 = document.getElementById("bilibili");
             var btn4 = document.getElementById("zhihu");
-            var btn5 = document.getElementById("zhihu");
+            var btn5 = document.getElementById("douban");
             setTimeout(function ()
             {
                 var h = baiduBtn.offsetHeight;
@@ -154,7 +154,7 @@
         weixinBtn.innerHTML = "<input type='button' id='weixin' value='微信' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0; font-size:17px;'>";
         bilibiliBtn.innerHTML = "<input type='button' id='bilibili' value='B站' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0; font-size:17px;'>";
         zhihuBtn.innerHTML = "<input type='button' id='zhihu' value='知乎' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0; font-size:17px;'>";
-        doubanBtn.innerHTML = "<input type='button' id='zhihu' value='豆瓣' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0 10px 10px 0; font-size:17px;'>";
+        doubanBtn.innerHTML = "<input type='button' id='douban' value='豆瓣' class='btn' style='width:80px; height:" + h + "px; color:#fff; background:" + color + ";border:0;border-radius:0 10px 10px 0; font-size:17px;'>";
 
         function getStyle (element, property)
         {
