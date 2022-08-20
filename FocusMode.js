@@ -202,8 +202,16 @@
             hideUnUsed();
         },10);
 
+        setTimeout(function ()
+        {
+            $(".palette-button-wrap").hide();
+            $(".header-channel").hide();
+        },300);
+
         function hideUnUsed (){
             $(".right-container").hide();
+            $(".bili-feed4-layout").hide();
+            $(".palette-button-outer").hide();
         }
     }
 })();
