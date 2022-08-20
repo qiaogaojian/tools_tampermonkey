@@ -8,6 +8,7 @@
 // @match             *://*.baidu.com/*
 // @match             *://*.sogou.com/*
 // @match             *://*.zhihu.com/*
+// @match             *://*.bilibili.com/*
 // @grant             none
 // @require           https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js
 // ==/UserScript==
@@ -193,5 +194,16 @@
         }
 
         console.log("****************************************************************** sogou.com ******************************************************************")
+    } else if (curUrl.includes("bilibili.com"))
+    {
+        hideUnUsed();
+        setTimeout(function ()
+        {
+            hideUnUsed();
+        },10);
+
+        function hideUnUsed (){
+            $(".right-container").hide();
+        }
     }
 })();
