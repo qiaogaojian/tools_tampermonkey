@@ -100,12 +100,13 @@
 
         // 输入后样式调整
         let input = document.getElementById("kw"); // 百度输入框
-        input.oninput = function () {
+        input.addEventListener("input", function () {
             setTimeout(function () {
                 let h = baiduBtn.offsetHeight;
-                googleBtn.style.height = h + "px";
+                $("#google")[0].style.height = h + "px";
+                console.log("reset google button height on input.");
             }, 10);
-        };
+        });
 
         let form = $(".fm")[0];
         form.appendChild(googleBtn);
@@ -129,12 +130,12 @@
 
         // 输入后样式调整
         let input = document.getElementById("kw"); // 百度输入框
-        input.oninput = function () {
+        input.addEventListener("input", function () {
             setTimeout(function () {
                 let h = baiduBtn.offsetHeight;
-                weixinBtn.style.height = h + "px";
+                $("#weixin")[0].style.height = h + "px";
             }, 10);
-        };
+        });
 
         let form = $(".fm")[0];
         form.appendChild(weixinBtn);
@@ -158,12 +159,12 @@
 
         // 输入后样式调整
         let input = document.getElementById("kw"); // 百度输入框
-        input.oninput = function () {
+        input.addEventListener("input", function () {
             setTimeout(function () {
                 let h = baiduBtn.offsetHeight;
-                bilibiliBtn.style.height = h + "px";
+                $("#bilibili")[0].style.height = h + "px";
             }, 10);
-        };
+        });
 
         let form = $(".fm")[0];
         form.appendChild(bilibiliBtn);
@@ -187,12 +188,12 @@
 
         // 输入后样式调整
         let input = document.getElementById("kw"); // 百度输入框
-        input.oninput = function () {
+        input.addEventListener("input", function () {
             setTimeout(function () {
                 let h = baiduBtn.offsetHeight;
-                zhihuBtn.style.height = h + "px";
+                $("#zhihu")[0].style.height = h + "px";
             }, 10);
-        };
+        });
 
         let form = $(".fm")[0];
         form.appendChild(zhihuBtn);
@@ -216,12 +217,12 @@
 
         // 输入后样式调整
         let input = document.getElementById("kw"); // 百度输入框
-        input.oninput = function () {
+        input.addEventListener("input", function () {
             setTimeout(function () {
                 let h = baiduBtn.offsetHeight;
-                doubanBtn.style.height = h + "px";
+                $("#douban")[0].style.height = h + "px";
             }, 10);
-        };
+        });
 
         let form = $(".fm")[0];
         form.appendChild(doubanBtn);
