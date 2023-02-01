@@ -30,6 +30,9 @@ setupFocusMode();
 
 function setupFocusMode() {
     "use strict";
+
+    console.log("********************************* Start Focus Mode *********************************");
+
     let curUrl = window.location.href;
     console.log(`current website name: url: ${curUrl}`);
 
@@ -101,7 +104,7 @@ function createSearchBtnGoogle(baiduBtn) {
     googleBtn.innerHTML = "<input type='button' id='google' value='Google' class='btn' style='width:80px; height:" + heightBtnBaidu + "px; color:#fff; background:" + colorBtnBaidu + ";border:0;border-radius:0; font-size:17px;'>";
 
     // 输入后样式调整
-    let input = document.getElementById("kw"); // 百度输入框
+    let input = $("#kw")[0]; // 百度输入框
     input.addEventListener("input", function () {
         setTimeout(function () {
             let h = baiduBtn.offsetHeight;
@@ -131,7 +134,7 @@ function createSearchBtnWeixin(baiduBtn) {
     weixinBtn.innerHTML = "<input type='button' id='weixin' value='微信' class='btn' style='width:80px; height:" + heightBtnBaidu + "px; color:#fff; background:" + colorBtnBaidu + ";border:0;border-radius:0; font-size:17px;'>";
 
     // 输入后样式调整
-    let input = document.getElementById("kw"); // 百度输入框
+    let input = $("#kw")[0]; // 百度输入框
     input.addEventListener("input", function () {
         setTimeout(function () {
             let h = baiduBtn.offsetHeight;
@@ -160,7 +163,7 @@ function createSearchBtnBilibili(baiduBtn) {
     bilibiliBtn.innerHTML = "<input type='button' id='bilibili' value='B站' class='btn' style='width:80px; height:" + heightBtnBaidu + "px; color:#fff; background:" + colorBtnBaidu + ";border:0;border-radius:0; font-size:17px;'>";
 
     // 输入后样式调整
-    let input = document.getElementById("kw"); // 百度输入框
+    let input = $("#kw")[0]; // 百度输入框
     input.addEventListener("input", function () {
         setTimeout(function () {
             let h = baiduBtn.offsetHeight;
@@ -189,7 +192,7 @@ function createSearchBtnZhihu(baiduBtn) {
     zhihuBtn.innerHTML = "<input type='button' id='zhihu' value='知乎' class='btn' style='width:80px; height:" + heightBtnBaidu + "px; color:#fff; background:" + colorBtnBaidu + ";border:0;border-radius:0; font-size:17px;'>";
 
     // 输入后样式调整
-    let input = document.getElementById("kw"); // 百度输入框
+    let input = $("#kw")[0]; // 百度输入框
     input.addEventListener("input", function () {
         setTimeout(function () {
             let h = baiduBtn.offsetHeight;
@@ -218,7 +221,7 @@ function createSearchBtnDouban(baiduBtn) {
     doubanBtn.innerHTML = "<input type='button' id='douban' value='豆瓣' class='btn' style='width:80px; height:" + heightBtnBaidu + "px; color:#fff; background:" + colorBtnBaidu + ";border:0;border-radius:0 10px 10px 0; font-size:17px;'>";
 
     // 输入后样式调整
-    let input = document.getElementById("kw"); // 百度输入框
+    let input = $("#kw")[0]; // 百度输入框
     input.addEventListener("input", function () {
         setTimeout(function () {
             let h = baiduBtn.offsetHeight;
