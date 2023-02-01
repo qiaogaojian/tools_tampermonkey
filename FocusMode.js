@@ -9,8 +9,20 @@
 // @match             *://*.sogou.com/*
 // @match             *://*.zhihu.com/*
 // @match             *://*.bilibili.com/*
-// @grant             none
-// @require           https://cdn.staticfile.org/jquery/3.6.0/jquery.min.js
+// @include           *://*.baidu.com/*
+// @include           *://*.sogou.com/*
+// @include           *://*.zhihu.com/*
+// @include           *://*.bilibili.com/*
+// @include           *://*.youtube.com/*
+// @grant             GM_addStyle
+// @grant             GM_deleteValue
+// @grant             GM_setValue
+// @grant             GM_getValue
+// @grant             GM_addValueChangeListener
+// @connect           *
+// @noframes
+// @run-at       document-end
+// @require      https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
 // ==/UserScript==
 
 (function ()
@@ -176,6 +188,7 @@
             $(".SearchSideBar").css("visibility", "hidden");
             $(".Footer").css("visibility", "hidden");
             $(".PageHeader").css("visibility", "hidden");
+            $(".css-1oy4rvw").css("visibility", "hidden");
             $("div[data-za-detail-view-path-module_name='相关推荐']").hide();
         }
 
@@ -206,12 +219,44 @@
         {
             $(".palette-button-wrap").hide();
             $(".header-channel").hide();
+            $(".rec-list").hide();
         },300);
 
+        var scheduleHide = setInterval(function ()
+        {
+            if($("#live_recommand_report").is(':hidden'))
+            {
+                clearInterval(scheduleHide)
+                console.log("interval hide done!")
+            } else {
+                $(".ad-report").hide();
+                $(".rec-footer").hide();
+                $("#live_recommand_report").hide();
+                console.log("interval hide")
+            }
+        },1000);
+
         function hideUnUsed (){
-            $(".right-container").hide();
             $(".bili-feed4-layout").hide();
             $(".palette-button-outer").hide();
         }
+         console.log("****************************************************************** bilibili.com ******************************************************************")
+    } else if (curUrl.includes("youtube.com"))
+    {
+        hideUnUsed();
+        setTimeout(function ()
+        {
+            hideUnUsed();
+        }, 1000);
+
+        function hideUnUsed ()
+        {
+            $(".ytd-two-column-browse-results-renderer").css("visibility", "hidden");
+            $(".ytd-watch-next-secondary-results-renderer").css("visibility", "hidden");
+            $(".ytd-item-section-renderer").css("visibility", "hidden");
+        }
+
+        console.log("****************************************************************** youtube.com ******************************************************************")
     }
+
 })();
