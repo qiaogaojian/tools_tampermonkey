@@ -24,7 +24,7 @@
 // @run-at       document-end
 // @require      https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
 // ==/UserScript==
-import $ from "libs/jquery.min";
+// import $ from "libs/jquery.min";
 
 (function () {
     "use strict";
