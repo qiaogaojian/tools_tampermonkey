@@ -303,7 +303,7 @@ function handleBilibili() {
     }, 10);
 
     let hideBilibiliTimer = setInterval(function () {
-        if ($("#live_recommand_report").is("':hidden")) {
+        if ($("#live_recommand_report").is(":hidden")) {
             clearInterval(hideBilibiliTimer);
             console.log("interval hide done!");
         } else {
