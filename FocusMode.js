@@ -14,6 +14,7 @@
 // @include           *://*.zhihu.com/*
 // @include           *://*.bilibili.com/*
 // @include           *://*.youtube.com/*
+// @include           *://*.bing.com/*
 // @grant             GM_addStyle
 // @grant             GM_deleteValue
 // @grant             GM_setValue
@@ -24,7 +25,7 @@
 // @run-at       document-end
 // @require      https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js
 // ==/UserScript==
-// import $ from "libs/jquery.min";
+import $ from "libs/jquery.min";
 
 setupFocusMode();
 
@@ -37,6 +38,9 @@ function setupFocusMode() {
     console.log(`current website name: url: ${curUrl}`);
 
     switch (true) {
+        case /.*bing\.com.*/.test(curUrl):
+            handBing();
+            break;
         case /.*baidu\.com.*/.test(curUrl):
             handleBaidu();
             break;
@@ -53,6 +57,26 @@ function setupFocusMode() {
             handleYoutube();
             break;
     }
+}
+
+function handBing(){
+    console.log("********************************* bing.com *********************************");
+
+    // --------------------------------- 隐藏元素 ---------------------------------
+    hideEleBing();
+
+}
+
+function hideEleBing(){
+    hideBing();
+    setTimeout(function () {
+        hideBing();
+    }, 10);
+}
+
+function hideBing(){
+    $(".header").css("visibility", "hidden");
+    $(".vs").css("visibility", "hidden");
 }
 
 function handleBaidu() {
