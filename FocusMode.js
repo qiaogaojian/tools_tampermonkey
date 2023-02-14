@@ -76,7 +76,24 @@ function hideEleBing(){
 
 function hideBing(){
     $(".header").css("visibility", "hidden");
-    $(".vs").css("visibility", "hidden");
+    $(".bottom_row").css("visibility", "hidden");
+    $("form#sb_form").css("border-radius", "24px 0 0 24px");
+
+    $("input#sb_form_q").focus(function () {
+        $("div#as_foot").css("visibility", "hidden");
+        $("div#as_foot").css("border-radius", "0 0 24px 24px");
+        $("div#as_foot").css("height", "40px");
+
+        $("form#sb_form").css("border-radius", "24px 0 0 0");
+    });
+
+    $("input#sb_form_q").focusout(function () {
+        $("div#as_foot").css("visibility", "visible");
+        $("div#as_foot").css("border-radius", "0 0 24px 24px");
+        $("div#as_foot").css("height", "40px");
+
+        $("form#sb_form").css("border-radius", "24px 0 0 24px");
+    });
 }
 
 function handleBaidu() {
@@ -139,6 +156,12 @@ function createSearchBtnGoogle(baiduBtn) {
 
     let form = $(".fm")[0];
     form.appendChild(googleBtn);
+
+    $.create("i", {
+        className: "fa fa-arrow-right fa-times",
+        style: "visibility:hidden;height:0;width:0;",
+        appendToBody: true,
+    });
 }
 
 function createSearchBtnWeixin(baiduBtn) {
